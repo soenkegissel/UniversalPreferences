@@ -3,6 +3,7 @@ package com.zookey.universalpreferences;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
+import android.preference.PreferenceManager;
 import android.util.Log;
 
 import com.zookey.universalpreferences.objects.UniversalObject;
@@ -43,7 +44,7 @@ public class UniversalPreferences {
         if (context == null) {
             throw new IllegalArgumentException("Context can not be null");
         }
-        prefs = context.getSharedPreferences(context.getPackageName(), Context.MODE_PRIVATE);
+        prefs = PreferenceManager.getDefaultSharedPreferences(context);
     }
 
     public static synchronized UniversalPreferences getInstance(){
